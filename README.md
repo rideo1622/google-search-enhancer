@@ -10,7 +10,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 
 ## Features
 
-* **Custom Result Count:** Set the number of search results displayed per page (up to 200).
+* **Custom Result Count:** Set the number of search results displayed per page (up to 100).
 * **Domain Whitelisting:** Specify which Google domains (e.g., `google.com`, `google.com.tr`, `google.co.uk`) the extension should modify.
 * **Enable/Disable Toggle:** Easily enable or disable the extension's functionality from the popup.
 * **Simple Popup:** Quick access to enable/disable toggle and result count setting.
@@ -52,7 +52,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 
 ### Özellikler
 
-* **Özel Sonuç Sayısı:** Sayfa başına gösterilecek arama sonucu sayısını ayarlayın (200'e kadar).
+* **Özel Sonuç Sayısı:** Sayfa başına gösterilecek arama sonucu sayısını ayarlayın (100'e kadar).
 * **Alan Adı Beyaz Listesi:** Uzantının hangi Google alan adlarında (ör. `google.com`, `google.com.tr`, `google.co.uk`) değişiklik yapması gerektiğini belirtin.
 * **Etkinleştirme/Devre Dışı Bırakma:** Açılır pencereden uzantının işlevselliğini kolayca etkinleştirin veya devre dışı bırakın.
 * **Basit Açılır Pencere:** Etkinleştirme/devre dışı bırakma anahtarına ve sonuç sayısı ayarına hızlı erişim.
