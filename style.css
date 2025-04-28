@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Global Variables and Base Styles
+   ========================================================================== */
+
+   :root {
+    /* Color Palette */
+    --primary-color: #4285F4;      /* Main interactive color (buttons, focus rings) */
+    --primary-text: #ffffff;       /* Text color for primary background */
+    --secondary-text: #333333;     /* Default text color */
+    --background-color: #f8f9fa;   /* Page background */
+    --header-background: #e9ecef;  /* Background for options page header */
+    --border-color: #dee2e6;       /* Borders for inputs and other elements */
+    --input-background: #ffffff;   /* Background for input fields */
+  
+    /* Status Colors */
+    --success-color: #198754;      /* Text color for success messages (updated contrast) */
+    --success-background: #d1e7dd; /* Background for success messages */
+    --info-color: #055160;         /* Text color for info boxes (updated contrast) */
+    --info-background: #cff4fc;    /* Background for info boxes */
+    --info-border-color: #b6effb;  /* Border for info boxes */
+  
+    /* Sizing and Spacing */
+    --popup-width: 280px;          /* Fixed width for the popup window */
+    --options-max-width: 600px;    /* Max width for the options page container */
+    --border-radius: 6px;          /* Corner rounding for elements */
+    --spacing-small: 4px;
+    --spacing-medium: 8px;
+    --spacing-large: 12px;
+    --spacing-xlarge: 16px;
+    --spacing-xxlarge: 24px;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* System font stack */
+    background-color: var(--background-color);
+    color: var(--secondary-text);
+    font-size: 14px;
+    line-height: 1.5; /* Improves readability */
+  }
+  
+  /* ==========================================================================
+     Common Element Styles (Used in both popup and options)
+     ========================================================================== */
+  
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: var(--spacing-small);
+  }
+  
+  input[type=number],
+  input[type=text] { /* Combined styles for number and text inputs */
+    width: 100%;
+    padding: var(--spacing-medium);
+    margin-top: var(--spacing-small);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-background);
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  input[type=number]:focus,
+  input[type=text]:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.3); /* Custom focus indicator */
+  }
+  
+  input[type=checkbox] {
+    cursor: pointer;
+    accent-color: var(--primary-color); /* Style the checkmark color */
+    width: 16px;
+    height: 16px;
+    margin: 0; /* Reset margin for alignment */
+  }
+  
+  button {
+    padding: var(--spacing-medium) var(--spacing-large);
+    border: none;
+    background: var(--primary-color);
+    color: var(--primary-text);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em; /* Consistent button font size */
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #357ae8; /* Darken button on hover */
+  }
+  
+  button:active {
+    background-color: #2a62bc; /* Darken further on click */
+  }
+  
+  /* ==========================================================================
+     Layout Containers
+     ========================================================================== */
+  
+  /* General container used on both pages, but with different constraints */
+  .container {
+    padding: var(--spacing-xlarge);
+  }
+  
+  /* ==========================================================================
+     Popup Specific Styles (popup.html)
+     ========================================================================== */
+  
+  /* Apply fixed width only to the popup body */
+  body.popup {
+    width: var(--popup-width);
+  }
+  
+  /* Container layout for popup */
+  .popup .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-large);
+  }
+  
+  /* Alignment for checkbox and label in popup */
+  .popup .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+  }
+  
+  .popup .checkbox-group label {
+    margin-bottom: 0; /* Reset margin */
+    order: 2; /* Place label after checkbox */
+  }
+  
+  .popup .checkbox-group input[type=checkbox] {
+    order: 1; /* Place checkbox before label */
+  }
+  
+  /* Button alignment in popup */
+  .popup .actions {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: var(--spacing-medium);
+  }
+  
+  /* ==========================================================================
+     Options Page Specific Styles (options.html)
+     ========================================================================== */
+  
+  /* Apply max-width only to the options body or a wrapper if needed */
+  /* (Currently applied via .container specific styles below) */
+  
+  /* Header for the options page */
+  .options-page .header {
+    background: var(--header-background);
+    padding: var(--spacing-large) var(--spacing-xlarge);
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-text);
+  }
+  
+  /* Container layout and constraints for options page */
+  .options-page .container {
+    max-width: var(--options-max-width);
+    margin: var(--spacing-xlarge) auto; /* Center the container */
+    padding: var(--spacing-xlarge) var(--spacing-xxlarge); /* More horizontal padding */
+    display: grid; /* Use grid for layout */
+    gap: var(--spacing-xlarge);
+  }
+  
+  /* Alignment for checkbox and label row in options */
+  .options-page .row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+  }
+  
+  .options-page .row label {
+    margin-bottom: 0;
+    order: 2; /* Label after checkbox */
+  }
+  
+  .options-page .row input[type=checkbox] {
+    order: 1; /* Checkbox before label */
+  }
+  
+  /* Button alignment in options page (grid context) */
+  .options-page #saveBtn {
+    justify-self: start; /* Align button to the start of the grid cell */
+  }
+  
+  /* Status message shown after saving options */
+  .options-page .save-status {
+    grid-column: 1 / -1; /* Span all columns in the grid */
+    order: 99; /* Ensure it appears after other elements */
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    background-color: var(--success-background);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+    display: none; /* Hidden by default */
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* Informational box for domain instructions */
+  .options-page .info-box {
+    background-color: var(--info-background);
+    border: 1px solid var(--info-border-color);
+    color: var(--info-color);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    /* Adjust margin to be closer to the input above */
+    margin-top: calc(-1 * var(--spacing-medium) + var(--spacing-small));
+    font-size: 0.9em;
+  }
+  
+  .options-page .info-box a {
+    color: var(--info-color);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .options-page .info-box a:hover {
+    color: #083b44; /* Darken link on hover */
+  }
+  
+  
