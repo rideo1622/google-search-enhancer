@@ -16,6 +16,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 * **Simple Popup:** Quick access to enable/disable toggle and result count setting.
 * **Options Page:** Manage the list of domains and other settings.
 * **Localization:** Supports English and Turkish based on browser language.
+* **Theme Support:** Automatically adjusts to Chrome's light and dark themes.
 
 ## Installation
 
@@ -36,12 +37,12 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 1.  **Click the Extension Icon:** Click the extension's icon in your Chrome toolbar to open the popup.
 2.  **Popup Controls:**
     * Use the toggle switch to enable or disable the extension.
-    * Set the desired number of results per page in the input field. Changes are saved automatically.
+    * Set the desired number of results per page in the input field (maximum 100). Changes are saved automatically.
     * Click the "Settings" button to open the full options page.
 3.  **Options Page:**
     * Access via the "Settings" button in the popup or by right-clicking the extension icon and selecting "Options".
     * **Domains:** Enter the Google domains you want the extension to work on, separated by spaces (e.g., `google.com google.com.tr google.de`). You can find a list of Google domains at [google.com/supported_domains](https://www.google.com/supported_domains).
-    * **Results per page:** Set the desired number of results.
+    * **Results per page:** Set the desired number of results (maximum 100).
     * **Enabled:** Enable or disable the extension globally.
     * Click "Save" to apply changes made on the options page.
 4.  **Browse Google:** When you perform a search on one of the enabled Google domains, the extension will automatically adjust the URL to request the number of results you specified.
@@ -58,6 +59,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 * **Basit Açılır Pencere:** Etkinleştirme/devre dışı bırakma anahtarına ve sonuç sayısı ayarına hızlı erişim.
 * **Seçenekler Sayfası:** Alan adı listesini ve diğer ayarları yönetin.
 * **Yerelleştirme:** Tarayıcı diline göre İngilizce ve Türkçe destekler.
+* **Tema Desteği:** Chrome'un açık ve koyu temalarına otomatik olarak uyum sağlar.
 
 ### Kurulum
 
@@ -78,12 +80,12 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 1.  **Uzantı Simgesine Tıklayın:** Açılır pencereyi açmak için Chrome araç çubuğundaki uzantı simgesine tıklayın.
 2.  **Açılır Pencere Kontrolleri:**
     * Uzantıyı etkinleştirmek veya devre dışı bırakmak için anahtarı kullanın.
-    * Giriş alanına sayfa başına istediğiniz sonuç sayısını ayarlayın. Değişiklikler otomatik olarak kaydedilir.
+    * Giriş alanına sayfa başına istediğiniz sonuç sayısını ayarlayın (maksimum 100). Değişiklikler otomatik olarak kaydedilir.
     * Tam seçenekler sayfasını açmak için "Ayarlar" düğmesine tıklayın.
 3.  **Seçenekler Sayfası:**
     * Açılır penceredeki "Ayarlar" düğmesi aracılığıyla veya uzantı simgesine sağ tıklayıp "Seçenekler"i seçerek erişin.
     * **Alan Adları:** Uzantının çalışmasını istediğiniz Google alan adlarını boşluklarla ayırarak girin (ör. `google.com google.com.tr google.de`). Google alan adlarının bir listesini [google.com/supported_domains](https://www.google.com/supported_domains) adresinde bulabilirsiniz.
-    * **Sayfa başına sonuç:** İstediğiniz sonuç sayısını ayarlayın.
+    * **Sayfa başına sonuç:** İstediğiniz sonuç sayısını ayarlayın (maksimum 100).
     * **Etkin:** Uzantıyı genel olarak etkinleştirin veya devre dışı bırakın.
     * Seçenekler sayfasında yapılan değişiklikleri uygulamak için "Kaydet"e tıklayın.
 4.  **Google'da Gezinme:** Etkinleştirilmiş Google alan adlarından birinde arama yaptığınızda, uzantı belirttiğiniz sonuç sayısını isteyecek şekilde URL'yi otomatik olarak ayarlayacaktır.

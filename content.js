@@ -10,6 +10,9 @@
     ({ domains, resultCount, enabled }) => {
       // Exit immediately if the extension is disabled in settings.
       if (!enabled) return;
+      
+      // Enforce maximum value of 100 for result count
+      resultCount = Math.min(100, resultCount);
 
       // Get the hostname of the current page (e.g., "www.google.com").
       const host = location.hostname;
