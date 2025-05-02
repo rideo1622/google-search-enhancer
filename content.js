@@ -16,13 +16,28 @@
 
       // Get the hostname of the current page (e.g., "www.google.com").
       const host = location.hostname;
-
-      // Check if the current hostname matches any of the domains specified in settings.
-      // It checks for exact match or if the host ends with ".<domain>" (e.g., www.google.com matches google.com).
-      const matches = domains.some(d => host === d || host.endsWith(`.${d}`));
-
-      // Exit if the current domain is not in the user's list.
-      if (!matches) return;
+      
+      // Get the pathname and search part of the URL
+      const path = location.pathname;
+      const searchParams = location.search;
+      
+      // Check if we're on a standard Google domain
+      // First, extract the base domain (like google.com, google.co.uk)
+      const domainMatch = host.match(/(?:www\.)?(google\.[^.]+(?:\.[^.]+)?)$/);
+      if (!domainMatch) return;
+      
+      const baseDomain = domainMatch[1];
+      
+      // Check if the base domain is in the allowed list
+      if (!domains.includes(baseDomain)) return;
+      
+      // Only proceed if we're on a Google search page (path is /search and has a query parameter)
+      if (path !== '/search' || !searchParams.includes('?q=')) return;
+      
+      // Ensure we're not on a subdomain other than 'www'
+      // We already know we're on a google.* domain from the domainMatch check
+      // Make sure the hostname is either 'google.TLD' or 'www.google.TLD'
+      if (host !== baseDomain && host !== `www.${baseDomain}`) return;
 
       // Create a URL object to easily manipulate search parameters.
       const url = new URL(location.href);
