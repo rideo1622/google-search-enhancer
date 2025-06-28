@@ -18,8 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const translations = {
     extName:    ['Google Custom Search Enhancer', 'Google Arama Özelleştirici'],
     lblEnable:  ['Enable Extension', 'Uzantıyı Etkinleştir'],
-    lblResults: ['Results per page', 'Sayfa başına sonuç'],
-    btnOptions: ['Settings', 'Ayarlar']
+    lblResults: ['Results per page', 'Sayfa başına sonuç']
   };
 
   // Apply translations to all elements with data-i18n attribute
@@ -37,7 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Etkileşimli elementleri tanımla
   const toggle      = document.getElementById('toggleEnabled');
   const resultInput = document.getElementById('resultCount');
-  const btnOptions  = document.getElementById('btnOptions');
 
   // Load settings
   // Ayarları yükle
@@ -60,9 +58,5 @@ window.addEventListener('DOMContentLoaded', () => {
     validCount = Math.min(validCount, 100);
     resultInput.value = validCount;
     chrome.storage.sync.set({ resultCount: validCount });
-  });
-
-  btnOptions.addEventListener('click', () => {
-    chrome.runtime.openOptionsPage();
   });
 });

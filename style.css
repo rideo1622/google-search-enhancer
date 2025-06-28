@@ -16,12 +16,11 @@
     --primary-hover: #357ae8;
     --primary-active: #2a62bc;
     --primary-text: #ffffff;
-    --secondary-text: #333333;
-    --background-color: #f8f9fa;
-    --header-background: #e9ecef;
-    --border-color: #dee2e6;
-    --card-background: #ffffff;
+    --secondary-text: #5f6368;
+    --background-color: #ffffff;
+    --border-color: #dadce0;
     --input-background: #ffffff;
+    --input-text-color: #202124;
   
     /* Status Colors */
     /* Status Renkleri */
@@ -33,14 +32,14 @@
   
     /* Sizing and Spacing */
     /* Boyutlandırma ve Boşluk */
-    --popup-width: 320px;
+    --popup-width: 340px;
     --options-max-width: 600px;
     --border-radius: 8px;
     --spacing-small: 4px;
     --spacing-medium: 8px;
-    --spacing-large: 12px;
-    --spacing-xlarge: 16px;
-    --spacing-xxlarge: 24px;
+    --spacing-large: 16px;
+    --spacing-xlarge: 24px;
+    --spacing-xxlarge: 32px;
   
     /* Transitions */
     /* Geçişler */
@@ -49,8 +48,12 @@
     /* Shadows */
     /* Gölgeler */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+    /* Fonts */
+    /* Fontlar */
+    --google-font-family: 'Roboto', sans-serif;
   }
   
   /* Dark Theme Color Overrides */
@@ -61,12 +64,13 @@
       --primary-hover: #5c95f5;
       --primary-active: #6fa1f6;
       --primary-text: #ffffff;
-      --secondary-text: #e1e1e1;
+      --secondary-text: #bdc1c6;
       --background-color: #202124;
       --header-background: #292a2d;
       --border-color: #3c4043;
       --card-background: #292a2d;
-      --input-background: #2a2a2a;
+      --input-background: #202124;
+      --input-text-color: #e8eaed;
       
       /* Status Colors – Dark Theme */
       /* Status Renkleri - Koyu Tema */
@@ -86,7 +90,7 @@
   
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* System font stack */
+    font-family: var(--google-font-family);
     background-color: var(--background-color);
     color: var(--secondary-text);
     font-size: 14px;
@@ -168,7 +172,7 @@
   
   /* General container used on both pages, but with different constraints */
   .container {
-    padding: var(--spacing-xlarge);
+    padding: 0;
   }
   
   /* ==========================================================================
@@ -176,22 +180,23 @@
      ========================================================================== */
   
   /* Apply fixed width only to the popup body */
+  /* Sadece popup gövdesine sabit genişlik uygula */
   body.popup {
     width: var(--popup-width);
   }
   
   /* Container layout for popup */
+  /* Popup için container düzeni */
   .popup .container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-large);
+    gap: var(--spacing-xlarge); /* Increased gap for better separation */
     padding: var(--spacing-xlarge);
     background-color: var(--card-background);
-    box-shadow: var(--shadow-sm);
-    border-radius: var(--border-radius);
   }
   
   /* Google Logo-inspired header */
+  /* Google Logo'dan ilham alan başlık */
   .popup::before {
     content: '';
     display: block;
@@ -206,6 +211,7 @@
   }
   
   /* Alignment for checkbox and label in popup */
+  /* Popup içindeki checkbox ve etiket hizalaması */
   .popup .checkbox-group {
     display: flex;
     align-items: center;
@@ -215,262 +221,161 @@
   .popup .checkbox-group label {
     margin-bottom: 0; /* Reset margin */
     order: 2; /* Place label after checkbox */
+    user-select: none; /* Prevent text selection on click */
   }
   
   .popup .checkbox-group input[type=checkbox] {
-    order: 1;
-  }
-  
-  /* Button alignment in popup */
-  .popup .actions {
-    display: flex;
-    justify-content: flex-end; /* Align button to the right */
-    margin-top: var(--spacing-large);
+    order: 1; /* Place checkbox before label */
   }
   
   /* ==========================================================================
-     Options Page Specific Styles (options.html)
+     Form Element Styles reflecting Google's branding
+     ========================================================================== */
+  /* ==========================================================================
+     Google marka kimliğini yansıtan form elemanı stilleri
      ========================================================================== */
   
-  /* Apply max-width only to the options body or a wrapper if needed */
-  /* (Currently applied via .container specific styles below) */
-  
-  /* Header for the options page */
-  .options-page .header {
-    background: var(--header-background);
-    padding: var(--spacing-large) var(--spacing-xlarge);
-    text-align: center;
-    font-size: 1.4em;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--secondary-text);
-    box-shadow: var(--shadow-sm);
+  .input-group {
     position: relative;
   }
   
-  /* Google bar for the options page header */
-  .options-page .header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, 
-      var(--google-blue) 25%, 
-      var(--google-red) 25%, 
-      var(--google-red) 50%, 
-      var(--google-yellow) 50%, 
-      var(--google-yellow) 75%, 
-      var(--google-green) 75%);
-  }
-  
-  /* Container layout and constraints for options page */
-  .options-page .container {
-    max-width: var(--options-max-width);
-    margin: var(--spacing-xlarge) auto; /* Center the container */
-    padding: var(--spacing-xlarge) var(--spacing-xxlarge); /* More horizontal padding */
-    display: grid; /* Use grid for layout */
-    gap: var(--spacing-xlarge);
-    background-color: var(--card-background);
+  .input-group input {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-md);
-  }
-  
-  /* Alignment for checkbox and label row in options */
-  .options-page .row {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-medium);
-  }
-  
-  .options-page .row label {
-    margin-bottom: 0;
-    order: 2; /* Label after checkbox */
-  }
-  
-  .options-page .row input[type=checkbox] {
-    order: 1; /* Checkbox before label */
-  }
-  
-  /* Button alignment in options page (grid context) */
-  .options-page #saveBtn {
-    justify-self: start; /* Align button to the start of the grid cell */
-    background: var(--google-blue);
-  }
-  
-  .options-page #saveBtn:hover {
-    background: var(--primary-hover);
-  }
-  
-  /* Renk değişimli buton efekti */
-  @keyframes googleColors {
-    0%, 100% { background-color: var(--google-blue); }
-    25% { background-color: var(--google-red); }
-    50% { background-color: var(--google-yellow); }
-    75% { background-color: var(--google-green); }
-  }
-  
-  .options-page #saveBtn:active {
-    animation: googleColors 1s;
-  }
-  
-  /* Status message shown after saving options */
-  .options-page .save-status {
-    grid-column: 1 / -1; /* Span all columns in the grid */
-    margin-top: var(--spacing-medium);
-    padding: var(--spacing-medium);
-    border-radius: var(--border-radius);
-    background-color: var(--success-background);
-    color: var(--success-color);
-    border: 1px solid transparent;
-    display: none; /* Hidden by default */
-    font-weight: 500;
-    text-align: center;
-  }
-  
-  /* Informational box for domain instructions */
-  .options-page .info-box {
-    background-color: var(--info-background);
-    border: 1px solid var(--info-border-color);
-    color: var(--info-color);
+    color: var(--input-text-color);
+    width: 100%;
     padding: var(--spacing-large);
-    border-radius: var(--border-radius);
-    margin-top: var(--spacing-small);
-    font-size: 0.9em;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 1rem;
   }
   
-  .options-page .info-box a {
-    color: var(--info-color);
-    font-weight: 600;
-    text-decoration: underline;
+  .input-group label {
+    color: var(--secondary-text);
+    position: absolute;
+    top: 50%;
+    left: var(--spacing-large);
+    transform: translateY(-50%);
+    transition: all var(--transition-speed) ease-in-out;
+    pointer-events: none;
+    background-color: var(--background-color);
+    padding: 0 4px;
   }
   
-  .options-page .info-box a:hover {
-    text-decoration: none;
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
   }
   
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  /* Google logosunun renklerini yansıtan form elementleri */
-  .input-group:focus-within label {
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 12px;
+    font-size: 12px;
     color: var(--primary-color);
   }
   
-  .input-group:nth-child(1):focus-within label {
-    color: var(--google-blue);
+  /* Hide number input arrows for a cleaner look */
+  /* Daha temiz bir görünüm için sayısal girdi oklarını gizle */
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
   }
   
-  .input-group:nth-child(2):focus-within label {
-    color: var(--google-red);
-  }
-  
-  .input-group:nth-child(1):focus-within input {
-    border-color: var(--google-blue);
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
-  }
-  
-  .input-group:nth-child(2):focus-within input {
-    border-color: var(--google-red);
-    box-shadow: 0 0 0 2px rgba(234, 67, 53, 0.2);
-  }
-  
-  /* Google Logo Stillemeleri */
-  .google-logo {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background: var(--google-blue);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .google-logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: conic-gradient(
-      var(--google-blue) 0deg 90deg,
-      var(--google-red) 90deg 180deg,
-      var(--google-yellow) 180deg 270deg,
-      var(--google-green) 270deg 360deg
-    );
-    z-index: -1;
-  }
+  /* ==========================================================================
+     Google Logo Styling
+     ========================================================================== */
+  /* ==========================================================================
+     Google Logo Stili
+     ========================================================================== */
   
   .logo-container {
     display: flex;
     align-items: center;
-    margin-right: var(--spacing-medium);
+    justify-content: center;
+    margin-bottom: var(--spacing-medium);
   }
   
-  /* Popup Başlık Stili */
+  .google-logo {
+    font-family: "Product Sans", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--google-blue); /* Default to blue */
+  }
+  
+  .google-logo::before {
+    content: 'G';
+    color: var(--google-blue);
+  }
+  
+  .google-logo::after {
+    content: 'oogle';
+    color: var(--secondary-text);
+    font-weight: 400;
+  }
+  
   .popup-header {
     display: flex;
     align-items: center;
-    margin-bottom: var(--spacing-large);
-    padding-bottom: var(--spacing-medium);
+    gap: var(--spacing-large);
+    padding: var(--spacing-large) var(--spacing-xlarge);
     border-bottom: 1px solid var(--border-color);
+  }
+  
+  .header-logo {
+    width: 32px;
+    height: 32px;
   }
   
   .popup-header .title {
     font-size: 16px;
+    font-weight: 500;
     margin: 0;
-    font-weight: 600;
-    color: var(--secondary-text);
+    color: var(--input-text-color);
   }
   
-  /* Options Header Stili */
-  .options-page .header {
+  .popup-content {
+    padding: var(--spacing-xlarge);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-xxlarge);
   }
   
-  /* Google renkli sınıflar */
-  .google-blue label {
-    color: var(--google-blue);
+  /* Remove any remaining options-page specific styles */
+  /* Kalan options-page'e özgü stilleri kaldır */
+  .options-page, 
+  .info-box,
+  .save-status,
+  #saveBtn {
+    display: none !important;
   }
   
-  .google-red label {
-    color: var(--google-red);
-  }
-  
-  .google-yellow label {
-    color: var(--google-yellow);
-  }
-  
-  .google-green label {
-    color: var(--google-green);
-  }
-  
-  /* Google-stilli focus efektleri */
+  /* Color classes for focus states (if you want to reuse them) */
+  /* Odak durumları için renk sınıfları (yeniden kullanmak isterseniz) */
   .google-blue input:focus {
     border-color: var(--google-blue);
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.3);
   }
   
   .google-red input:focus {
     border-color: var(--google-red);
-    box-shadow: 0 0 0 2px rgba(234, 67, 53, 0.2);
+    box-shadow: 0 0 0 2px rgba(234, 67, 53, 0.3);
   }
   
   .google-yellow input:focus {
     border-color: var(--google-yellow);
-    box-shadow: 0 0 0 2px rgba(251, 188, 5, 0.2);
+    box-shadow: 0 0 0 2px rgba(251, 188, 5, 0.3);
+  }
+  
+  .google-green input:focus {
+    border-color: var(--google-green);
+    box-shadow: 0 0 0 2px rgba(52, 168, 83, 0.3);
   }
   
   

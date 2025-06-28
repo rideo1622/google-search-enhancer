@@ -8,12 +8,12 @@
   // Load extension settings from storage.
   // Depolamadan uzantı ayarlarını yükle.
   chrome.storage.sync.get(
-    // Provide default values in case settings haven't been saved yet.
-    // Ayarlar henüz kaydedilmemişse varsayılan değerler sağlar.
-    { domains: ["google.com", "google.com.tr"], resultCount: 100, enabled: true },
-    // Callback function with the loaded settings.
-    // Yüklenen ayarlarla geri çağrım fonksiyonu.
-    ({ domains, resultCount, enabled }) => {
+    // Only resultCount and enabled are needed now; domain list removed.
+    // Artık yalnızca resultCount ve enabled gerekiyor; alan adı listesi kaldırıldı.
+    { resultCount: 100, enabled: true },
+    // Callback with loaded settings
+    // Yüklenen ayarlarla geri çağrım
+    ({ resultCount, enabled }) => {
       // Exit immediately if the extension is disabled in settings.
       // Uzantı ayarlarda devre dışıysa hemen çık.
       if (!enabled) return;
@@ -26,15 +26,8 @@
       // Geçerli sayfanın ana bilgisayar adını al (ör. "www.google.com").
       const host = location.hostname;
 
-      // Check if the current hostname matches any of the domains specified in settings.
-      // Geçerli ana bilgisayar adının ayarlarda belirtilen alan adlarıyla eşleşip eşleşmediğini kontrol et.
-      // It checks for exact match or if the host ends with ".<domain>" (e.g., www.google.com matches google.com).
-      // Tam eşleşme veya ana bilgisayarın ".<alan adı>" ile bitip bitmediğini kontrol eder (ör. www.google.com, google.com ile eşleşir).
-      const matches = domains.some(d => host === d || host.endsWith(`.${d}`));
-
-      // Exit if the current domain is not in the user's list.
-      // Geçerli alan adı kullanıcının listesinde değilse çık.
-      if (!matches) return;
+      // Manifest already limits injection to Google Search pages; no extra domain filtering needed.
+      // Manifest içerik betiğini zaten Google Arama sayfalarıyla sınırlar; ek alan adı filtresi gerekmiyor.
 
       // Create a URL object to easily manipulate search parameters.
       // Arama parametrelerini kolayca değiştirmek için bir URL nesnesi oluştur.
