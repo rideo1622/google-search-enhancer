@@ -21,7 +21,7 @@
     },
     "content_scripts": [
       {
-        "matches": ["*://*.google.*/*"],
+        "matches": ["<all_urls>"],
         "js": ["content.js"],
         "run_at": "document_start"
       }
@@ -29,6 +29,6 @@
     "content_security_policy": {
       "extension_pages": "script-src 'self'; object-src 'self'"
     },
-    "author": "Your Name",
-    "homepage_url": "https://github.com/your/repo"
+    "author": "rideo",
+    "homepage_url": "https://github.com/rideo1622/google-search-enhancer/"
   }
