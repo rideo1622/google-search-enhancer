@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="icons/search.png">
+  <link rel="stylesheet" href="style.css">
+  <title data-i18n="hdrSettings">Settings</title>
+</head>
+<body class="options-page">
+  <div class="header">
+    <div class="logo-container">
+      <div class="google-logo">G</div>
+    </div>
+    <span data-i18n="hdrSettings">Extension Settings</span>
+  </div>
+
+  <div class="container">
+    <div class="input-group google-blue">
+      <label for="domains" data-i18n="lblDomains">Domains (space-separated)</label>
+      <input type="text" id="domains" placeholder="örn: google.com google.com.tr">
+      <div class="info-box" data-i18n="lblDomainInfo"></div>
+    </div>
+
+    <div class="input-group google-red">
+      <label for="resultCount" data-i18n="lblResultsOpt">Results per page</label>
+      <input type="number" id="resultCount" min="1" max="100">
+    </div>
+
+    <div class="row google-yellow">
+      <input type="checkbox" id="enabled">
+      <label for="enabled" data-i18n="lblEnableOpt">Enabled</label>
+    </div>
+
+    <button id="saveBtn" data-i18n="btnSave">Save</button>
+
+    <div id="saveStatus" class="save-status"></div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

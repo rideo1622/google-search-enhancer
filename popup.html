@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title data-i18n="extName"></title>
+</head>
+<body class="popup">
+  <div class="container">
+    <div class="popup-header">
+      <div class="logo-container">
+        <div class="google-logo">G</div>
+      </div>
+      <h1 data-i18n="extName" class="title">Google Search Enhancer</h1>
+    </div>
+    
+    <div class="checkbox-group">
+      <input type="checkbox" id="toggleEnabled">
+      <label for="toggleEnabled" data-i18n="lblEnable">Enable Extension</label>
+    </div>
+    
+    <div class="input-group">
+      <label for="resultCount" data-i18n="lblResults">Results per page</label>
+      <input type="number" id="resultCount" min="1" max="100">
+    </div>
+    
+    <div class="actions">
+      <button id="btnOptions" data-i18n="btnOptions">Settings</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
