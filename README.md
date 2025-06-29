@@ -30,7 +30,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 
 ### Option 2: (If Published) Install from Chrome Web Store
 
-* *[Link to Chrome Web Store page will be added here if the extension is published]*
+* *[](https://chromewebstore.google.com/detail/google-custom-search-enha/nolkfdkgbffglmpjmbmpfpimiejiiipd)]*
 
 ## Usage
 
@@ -73,7 +73,7 @@ Google arama deneyiminizi, sayfa başına sonuç sayısını ayarlayarak ve uzan
 
 #### Seçenek 2: (Eğer Yayınlandıysa) Chrome Web Mağazası'ndan Yükleme
 
-* *[Uzantı yayınlanırsa Chrome Web Mağazası sayfasının bağlantısı buraya eklenecektir]*
+* *[](https://chromewebstore.google.com/detail/google-arama-%C3%B6zelle%C5%9Ftiric/nolkfdkgbffglmpjmbmpfpimiejiiipd)]*
 
 ### Kullanım
 
