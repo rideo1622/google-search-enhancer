@@ -1,8 +1,8 @@
 {
   "extName": {
-    "message": "Google Arama Özelleştirici"
+    "message": "Google Arama 100 Sonuç"
   },
   "extDescription": {
-    "message": "Google aramalarında alan adlarını, sonuç sayısını özelleştirin ve popup ya da ayarlardan açma/kapatma yapın."
+    "message": "Google'da tek seferde 100'e kadar arama sonucu görüntülemenizi sağlayan basit ve etkili bir eklenti."
   }
 }
