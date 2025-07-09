@@ -1,8 +1,10 @@
-# Google Search 100 Results / Google Arama 100 Sonuç
 
-[Chrome Web Store](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
-[Users](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
-[GitHub Stars](https://github.com/rideo1622/google-search-enhancer)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nolkfdkgbffglmpjmbmpfpimiejiiipd?style=for-the-badge&logo=google-chrome&logoColor=white&label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
+
+[![Users](https://img.shields.io/chrome-web-store/users/nolkfdkgbffglmpjmbmpfpimiejiiipd?style=for-the-badge&color=4285F4)](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
+
+[![GitHub Stars](https://img.shields.io/github/stars/rideo1622/google-search-enhancer?style=for-the-badge&logo=github)](https://github.com/rideo1622/google-search-enhancer)
+
 
 -----
 
