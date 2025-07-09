@@ -1,8 +1,8 @@
 {
   "extName": {
-    "message": "Google Custom Search Enhancer"
+    "message": "100 results in Google search"
   },
   "extDescription": {
-    "message": "Customize Google search domains, result count and enable/disable via popup or options."
+    "message": "A simple yet effective plugin to show up to 100 results when searching on Google."
   }
 }
