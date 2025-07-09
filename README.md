@@ -3,7 +3,7 @@
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nolkfdkgbffglmpjmbmpfpimiejiiipd?style=for-the-badge&logo=google-chrome&logoColor=white&label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
 [![Users](https://img.shields.io/chrome-web-store/users/nolkfdkgbffglmpjmbmpfpimiejiiipd?style=for-the-badge&color=4285F4)](https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/google-search-enhancer?style=for-the-badge&logo=github)](https://github.com/yourusername/google-search-enhancer)
+[![GitHub Stars](https://img.shields.io/github/stars/rideo1622/google-search-enhancer?style=for-the-badge&logo=github)](https://github.com/rideo1622/google-search-enhancer)
 
 ---
 
@@ -33,7 +33,7 @@
 #### Development Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/google-search-enhancer.git
+   git clone https://github.com/rideo1622/google-search-enhancer.git
    ```
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right corner
@@ -87,7 +87,7 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 #### Geliştirici Kurulumu
 1. Bu depoyu klonlayın:
    ```bash
-   git clone https://github.com/yourusername/google-search-enhancer.git
+   git clone https://github.com/rideo1622/google-search-enhancer.git
    ```
 2. Chrome'u açın ve `chrome://extensions/` adresine gidin
 3. Sağ üst köşedeki "Geliştirici modu"nu etkinleştirin
@@ -120,8 +120,8 @@ Katkılarınızı bekliyoruz! Lütfen Pull Request göndermekten veya hata rapor
 ## 🔗 Links / Bağlantılar
 
 - **Chrome Web Store**: https://chromewebstore.google.com/detail/nolkfdkgbffglmpjmbmpfpimiejiiipd?utm_source=item-share-cb
-- **GitHub Repository**: https://github.com/yourusername/google-search-enhancer
-- **Issues & Support**: https://github.com/yourusername/google-search-enhancer/issues
+- **GitHub Repository**: https://github.com/rideo1622/google-search-enhancer
+- **Issues & Support**: https://github.com/rideo1622/google-search-enhancer/issues
 
 ---
 
